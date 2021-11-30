@@ -7,10 +7,14 @@
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
 
+    <string name="total_cases_label">感染確認</string>
+    <string name="total_deaths_label">死亡</string>/
+    <string name="total_recover_label">退院</string>
+
     <!--error messages-->
     <string name="error_no_daata">No Data Available 😓</string>
     <string name="error_internet_connetion">No Internet Connection 😓</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

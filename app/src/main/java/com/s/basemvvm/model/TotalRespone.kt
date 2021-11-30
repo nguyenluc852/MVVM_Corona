@@ -5,10 +5,3 @@ data class TotalRespone(
     val result: Result
 )
 
-
-data class Result (
-    var totalDeaths: String,
-    var totalCases: String,
-    var totalRecovered: String
-)
-

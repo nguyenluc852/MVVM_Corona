@@ -12,18 +12,25 @@ import com.s.basemvvm.utils.Logger
 class MainFragmentViewModel(app: Application):  BaseViewModel(app) {
 
     val totalResult = MutableLiveData<Result>()
+    val listCountriesData = MutableLiveData<ArrayList<Result>>()
 
     init {
         getTotalData()
+        getListCountriesData()
     }
     fun getTotalData() = coroutines {
         network().getTotalData().onSucceed {
-            if (it.result == null) return@onSucceed
             totalResult.postValue(it.result)
         }
             .onFailed { errCode, errBody -> Logger.d(errBody.toString())  }
     }
 
+    fun  getListCountriesData() = coroutines {
+        network().getCountriesData().onSucceed {
+            if (it.result.isNullOrEmpty()) return@onSucceed
+            listCountriesData.postValue(it.result)
+        }
+    }
 
 
 

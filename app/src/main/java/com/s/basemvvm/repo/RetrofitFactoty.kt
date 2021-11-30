@@ -66,14 +66,15 @@ object RetrofitFactory {
 
     private val client by lazy {
         OkHttpClient().newBuilder()
+            .addInterceptor(Interceptor {
+                val  retquest = it.request().newBuilder()
+                    .addHeader("x-rapidapi-host", AppConstant.API_HOST)
+                    .addHeader("x-rapidapi-key", AppConstant.API_KEY)
+                    .build()
+                return@Interceptor it.proceed(retquest)
+            })
             .addInterceptor(loggingInterceptor)
-//            .addInterceptor(Interceptor {
-//                val  retquest = it.request().newBuilder()
-//                    .addHeader("x-rapidapi-host", AppConstant.API_HOST)
-//                    .addHeader("x-rapidapi-key", AppConstant.API_KEY)
-//                    .build()
-//                return@Interceptor it.proceed(retquest)
-//            })
+
             .sslSocketFactory(
                 sslSocketFactory,
                 (trustAllCerts[0] as X509TrustManager)

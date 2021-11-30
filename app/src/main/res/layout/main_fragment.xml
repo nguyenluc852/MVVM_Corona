@@ -46,7 +46,7 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toTopOf="parent"
-                       android:text="感染者"
+                       android:text="@string/total_cases_label"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblCase"
                        />
@@ -56,7 +56,7 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toBottomOf="@+id/lblCase"
-                       android:text="感染者"
+
                        android:textColor="@color/green_300"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblTotalCases"
@@ -74,7 +74,7 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toTopOf="parent"
-                       android:text="感染者"
+                       android:text="@string/total_deaths_label"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblDeath"
                        />
@@ -84,8 +84,8 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toBottomOf="@+id/lblDeath"
-                       android:text="感染者"
-                       android:textColor="@color/green_300"
+
+                       android:textColor="@color/red_100"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblTotalDeath"
                        />
@@ -102,7 +102,7 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toTopOf="parent"
-                       android:text="感染者"
+                       android:text="@string/total_recover_label"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblRecover"
                        />
@@ -112,7 +112,7 @@
                        android:gravity="center"
                        android:textSize="@dimen/sp_14"
                        app:layout_constraintTop_toBottomOf="@+id/lblRecover"
-                       android:text="感染者"
+
                        android:textColor="@color/green_300"
                        android:padding="@dimen/dp_8"
                        android:id="@+id/lblTotalRecover"
@@ -121,9 +121,46 @@
                </androidx.constraintlayout.widget.ConstraintLayout>
            </androidx.appcompat.widget.LinearLayoutCompat>
        </androidx.constraintlayout.widget.ConstraintLayout>
-       <androidx.recyclerview.widget.RecyclerView
+       <LinearLayout
+           android:id="@+id/layoutTitle"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:paddingStart="15dp"
+           android:paddingBottom="5dp">
+
+           <TextView
+               android:id="@+id/tvProvince"
+               style="@style/TextAppearance.MaterialComponents.Caption"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="2"
+               android:text="National" />
+
+           <TextView
+               android:id="@+id/tvConfirmed"
+               style="@style/TextAppearance.MaterialComponents.Caption"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:text="@string/total_cases_label" />
+
+           <TextView
+               android:id="@+id/tvRecovered"
+               style="@style/TextAppearance.MaterialComponents.Caption"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:text="@string/total_deaths_label" />
+       </LinearLayout>
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
            android:id="@+id/rcvListCountry"
            android:padding="@dimen/dp_16"
            />
