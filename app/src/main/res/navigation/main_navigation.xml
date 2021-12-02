@@ -10,5 +10,14 @@
         android:name="com.s.basemvvm.ui.fragment.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/main_fragment"
-        />
+        >
+        <action
+            android:id="@+id/action_nav_main_fragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.s.basemvvm.ui.fragment.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

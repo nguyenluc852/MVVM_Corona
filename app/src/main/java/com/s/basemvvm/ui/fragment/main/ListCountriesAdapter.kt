@@ -7,9 +7,6 @@ import com.s.basemvvm.base.BaseAdapter
 import com.s.basemvvm.model.Result
 import com.s.basemvvm.utils.Logger
 
-class ListCountriesAdapter :  BaseAdapter<Result>(R.layout.item_countries ), BaseAdapter.DefaultClickListener {
+class ListCountriesAdapter(listener: DefaultClickListener) :  BaseAdapter<Result>(R.layout.item_countries,  listener ) {
     override fun brVariableId(): Int = BR.item_country
-    override fun <T> onItemClick(position: Int, item: T) {
-        Logger.d(position)
-    }
 }

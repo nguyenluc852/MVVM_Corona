@@ -7,10 +7,12 @@
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
 
-    <string name="total_cases_label">感染確認</string>
-    <string name="total_deaths_label">死亡</string>/
-    <string name="total_recover_label">退院</string>
-
+    <string name="total_cases_label">感染者の合計数</string>
+    <string name="total_deaths_label">死亡の合計数</string>/
+    <string name="total_recover_label">回復者数</string>
+    <string name="new_cases_label">新規感染者数</string>
+    <string name="new_death_label">新規死亡</string>
+    <string name="active_case_label">感染確認</string>
     <!--error messages-->
     <string name="error_no_daata">No Data Available 😓</string>
     <string name="error_internet_connetion">No Internet Connection 😓</string>

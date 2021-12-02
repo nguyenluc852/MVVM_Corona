@@ -1,6 +1,7 @@
 package com.s.basemvvm.model
 
 import com.s.basemvvm.base.Model
+import java.io.Serializable
 
 data class Result (
     var country: String,
@@ -10,7 +11,7 @@ data class Result (
     var newDeaths: String,
     var totalRecovered: String,
     var activeCases: String
-):Model() {
+):Model(), Serializable {
     override val uniqueId: Any
         get() = country
 }
